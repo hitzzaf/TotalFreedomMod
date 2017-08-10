@@ -124,5 +124,16 @@ public class ChatManager extends FreedomService
             }
         }
     }
+    
+    public void requstAdmin(Player operator, String message)
+    {
+        for (Player player : server.getOnlinePlayers())
+        {
+            if (plugin.al.isAdmin(player))
+            {
+                playerMsg(player, ChatColor.GREEN  + "[ADMIN REQUEST] " + ChatColor.GOLD + operator.getName() + " is requesting an administrator: " + ChatColor.GREEN + message);
+            }
+        }
+    }
 
 }
